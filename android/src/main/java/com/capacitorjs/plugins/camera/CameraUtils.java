@@ -21,7 +21,10 @@ public class CameraUtils {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+       
+        //LA:change by Tom Voo,  image from cache directory
+        File storageDir = activity.getCacheDir();
+        //File storageDir = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
         File image = File.createTempFile(imageFileName, /* prefix */".jpg", /* suffix */storageDir/* directory */);
 
